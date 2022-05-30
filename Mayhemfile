@@ -1,8 +1,5 @@
 project: zxcvbn4j
-target: zxcvbn4j
-duration: 300
-image: ghcr.io/ebell495/zxcvbn4j:latest
-
+target: fuzz
 cmds:
     - cmd: ./fuzz.jar @@
       env:
