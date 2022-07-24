@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import com.nulabinc.zxcvbn.Zxcvbn;
 import com.nulabinc.zxcvbn.Strength;
 
-public class fuzz {
+public class fuzz_password_strength {
     public static void main(String[] args) throws Exception
     {
         Path path = Paths.get(args[0]);

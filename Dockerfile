@@ -4,8 +4,8 @@ WORKDIR /zxcvbn4j
 RUN gradle build
 RUN mkdir ./fuzz/deps && find /zxcvbn4j/build/libs -name "zxcvbn*0.jar" -exec cp {} "/zxcvbn4j/fuzz/deps/zxcvbn.jar" \;
 WORKDIR /zxcvbn4j/fuzz/src
-RUN echo $(ls -la /zxcvbn4j/fuzz/deps)
-RUN echo $(ls -la /zxcvbn4j/build/libs)
+# RUN echo $(ls -la /zxcvbn4j/fuzz/deps)
+# RUN echo $(ls -la /zxcvbn4j/build/libs)
 # Build the fuzz target
-RUN javac -cp "../deps/*" fuzz.java && jar cfme fuzz.jar Manifest.txt fuzz fuzz.class && chmod u+x fuzz.jar && cp fuzz.jar /zxcvbn4j/fuzz/deps
+RUN javac -cp "../deps/*" fuzz_password_strength.java && jar cfme fuzz_password_strength.jar Manifest.txt fuzz_password_strength fuzz_password_strength.class && chmod u+x fuzz_password_strength.jar && cp fuzz_password_strength.jar /zxcvbn4j/fuzz/deps
 WORKDIR /zxcvbn4j/fuzz/deps

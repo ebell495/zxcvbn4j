@@ -1,6 +1,6 @@
 project: zxcvbn4j
-target: fuzz
+target: fuzz-password-strength
 cmds:
-    - cmd: ./fuzz.jar @@
+    - cmd: ./fuzz_password_strength.jar @@
       env:
         MFUZZ_JAVA: '1'
